@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI analysis of catheter adverse event reports · Parsa Vafaei</title>
+<meta name="description" content="Using a large language model to read 300 FDA adverse event reports for long-term central venous catheters, and testing how far its answers can be trusted.">
+<meta property="og:title" content="AI analysis of catheter adverse event reports · Parsa Vafaei">
+<meta property="og:description" content="Using a large language model to read 300 FDA adverse event reports for long-term central venous catheters, and testing how far its answers can be trusted.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://parsavafaei.com/projects/catheter-adverse-events-ai.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23161C2C'/%3E%3Ctext x='16' y='21' font-family='monospace' font-size='13' fill='%23F5F5F1' text-anchor='middle'%3EPV%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">PV</span>Parsa Vafaei</a>
+    <nav aria-label="Main"><ul class="nav"><li><a href="../projects.html" aria-current="page">Work</a></li><li><a href="../blog.html">Writing</a></li><li><a href="../about.html">About</a></li><li><a href="../index.html#contact">Contact</a></li></ul></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<div class="crumbs"><a href="../projects.html">Projects</a> / P-09</div>
+<header class="proj-head">
+  <div class="stack">
+    <span class="tag data">Data, code &amp; AI</span>
+    <h1>AI analysis of catheter adverse event reports</h1>
+    <p class="lede">Using a large language model to read 300 FDA adverse event reports for long-term central venous catheters, and testing how far its answers can be trusted.</p>
+  </div>
+  <div class="label">
+    <div class="label-top"><span><span class="dot" style="background:var(--data)"></span>P-09</span><span>2026</span></div>
+    <dl class="kv"><dt>Project</dt><dd>Reading 300 FDA reports with a language model, then checking it against a person</dd><dt>Context</dt><dd>Self-directed</dd></dl>
+  </div>
+</header>
+<div class="metrics"><div class="metric"><b>300</b><span>FDA MAUDE reports</span></div><div class="metric"><b>93%</b><span>agreement with manual review</span></div><div class="metric"><b>0.90</b><span>Cohen&#x27;s kappa</span></div><div class="metric"><b>80%</b><span>of &#x27;leaks&#x27; were body breaks</span></div></div>
+<div class="proj-body">
+  <div><section><h2>The question</h2><p class="prose">Can AI read free-text complaint reports reliably enough to show what is really going wrong with a device?</p></section><section><h2>What I did</h2><ul class="did"><li>Pulled 300 reports from 2023 to 2025 from the FDA MAUDE database through the openFDA API.</li><li>Wrote the intended use and coding rules first, then had the model classify each report by failure mode, severity and phase of use.</li><li>Validated the model against a blinded manual review of 100 reports, using a predefined coding guide.</li><li>Compared what the field data showed with a design-stage FMEA.</li></ul></section><section><h2>What I found</h2><p class="prose">80% of reports coded as leaks were really catheter body breaks, and breaks rose from 28% to 54% of complaints over the period. The model agreed with the manual review on 93% of failure modes (Cohen&#x27;s kappa 0.90), and severity agreement rose to 85% after one coding rule was clarified. The comparison suggested six updates to the FMEA.</p></section><section><h2>Figures</h2><div class="figs"><figure><div class="plate"><img src="../assets/img/projects/pms-failure-mode-trend.png" alt="Bar chart: catheter body breaks 28%, 49%, 54% of complaints in 2023, 2024, 2025; external component failures 32%, 11%, 7%." loading="lazy"></div><figcaption>Catheter body breaks rose from 28% to 54% of complaints while hub and connector failures fell.</figcaption></figure><figure><div class="plate"><img src="../assets/img/projects/pms-validation-agreement.png" alt="Chart of agreement between AI coding and manual review." loading="lazy"></div><figcaption>Agreement between the AI labels and the blinded manual review, before the fix. Severity (61% here) rose to 85% after one coding rule was clarified.</figcaption></figure></div></section></div>
+  <aside class="aside">
+  <div><h3>Context</h3><p>Self-directed</p></div>
+  <div><h3>When</h3><p>2026</p></div>
+  <div><h3>Role</h3><p>Individual</p></div>
+  <div><h3>Methods &amp; tools</h3><ul class="chips"><li>Python</li><li>openFDA API</li><li>LLM classification</li><li>Inter-rater statistics</li><li>FMEA</li></ul></div>
+  <div><h3>Links</h3><ul style="list-style:none;padding:0"><li><a href="https://github.com/Parsavafaei26/catheter-pms-ai">Code and full report on GitHub ↗</a></li></ul></div>
+</aside>
+</div>
+<nav class="pager" aria-label="More projects"><a href="xray-filter-toolkit.html"><span>← Previous</span>X-ray filter toolkit</a><a class="next" href="signal-detection-agent.html"><span>Next →</span>Signal detection agent with a SQL database</a></nav>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Parsa Vafaei · London, UK</span>
+    <span><a href="mailto:parsasava@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/parsavafaeii">LinkedIn</a> · <a href="https://github.com/Parsavafaei26">GitHub</a></span>
+  </div>
+</footer>
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>

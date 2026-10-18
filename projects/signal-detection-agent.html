@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Signal detection agent with a SQL database · Parsa Vafaei</title>
+<meta name="description" content="Extending the catheter analysis into an agent that codes reports, checks its own answers, stores everything in a database and runs SQL checks for emerging problems.">
+<meta property="og:title" content="Signal detection agent with a SQL database · Parsa Vafaei">
+<meta property="og:description" content="Extending the catheter analysis into an agent that codes reports, checks its own answers, stores everything in a database and runs SQL checks for emerging problems.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://parsavafaei.com/projects/signal-detection-agent.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23161C2C'/%3E%3Ctext x='16' y='21' font-family='monospace' font-size='13' fill='%23F5F5F1' text-anchor='middle'%3EPV%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">PV</span>Parsa Vafaei</a>
+    <nav aria-label="Main"><ul class="nav"><li><a href="../projects.html" aria-current="page">Work</a></li><li><a href="../blog.html">Writing</a></li><li><a href="../about.html">About</a></li><li><a href="../index.html#contact">Contact</a></li></ul></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<div class="crumbs"><a href="../projects.html">Projects</a> / P-10</div>
+<header class="proj-head">
+  <div class="stack">
+    <span class="tag data">Data, code &amp; AI</span>
+    <h1>Signal detection agent with a SQL database</h1>
+    <p class="lede">Extending the catheter analysis into an agent that codes reports, checks its own answers, stores everything in a database and runs SQL checks for emerging problems.</p>
+  </div>
+  <div class="label">
+    <div class="label-top"><span><span class="dot" style="background:var(--data)"></span>P-10</span><span>2026</span></div>
+    <dl class="kv"><dt>Project</dt><dd>An auditable AI agent that flags emerging device problems</dd><dt>Context</dt><dd>Self-directed</dd></dl>
+  </div>
+</header>
+<div class="metrics"><div class="metric"><b>19</b><span>serious events flagged for review</span></div><div class="metric"><b>11</b><span>automated tests</span></div><div class="metric"><b>SQLite</b><span>database with full audit log</span></div></div>
+<div class="proj-body">
+  <div><section><h2>The question</h2><p class="prose">Can the coding method be turned into a repeatable system that catches problems early and keeps a person in charge of the serious calls?</p></section><section><h2>What I did</h2><ul class="did"><li>Built an agent that codes each report, checks the result against the coding rules, retries with the errors fed back, and sends serious or uncertain cases to a human review queue.</li><li>Designed a SQLite database for reports, labels, the review queue, signals and a full audit log.</li><li>Wrote SQL trend checks with views, CTEs and window functions: rising failure modes, keyword clusters and serious events.</li></ul></section><section><h2>What I found</h2><p class="prose">In a run on the 300 coded reports, the agent flagged the 2023 septum leak and air-entry clusters, rises in kinking and packaging defects in 2025, and 19 serious events, then drafted a signal report for sign-off. A simple &#x27;doubling&#x27; rule missed the gradual rise in catheter breaks, so I added a share-based check, kept separate from the pre-set rules.</p></section><section></section></div>
+  <aside class="aside">
+  <div><h3>Context</h3><p>Self-directed</p></div>
+  <div><h3>When</h3><p>2026</p></div>
+  <div><h3>Role</h3><p>Individual</p></div>
+  <div><h3>Methods &amp; tools</h3><ul class="chips"><li>Python</li><li>SQL (SQLite)</li><li>AI agents</li><li>Automated testing</li></ul></div>
+  <div><h3>Links</h3><ul style="list-style:none;padding:0"><li><a href="https://github.com/Parsavafaei26/pms-signal-agent">Code on GitHub ↗</a></li></ul></div>
+</aside>
+</div>
+<nav class="pager" aria-label="More projects"><a href="catheter-adverse-events-ai.html"><span>← Previous</span>AI analysis of catheter adverse event reports</a><a class="next" href="class-iii-catheter-dossier.html"><span>Next →</span>Fixing a rejected design dossier</a></nav>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Parsa Vafaei · London, UK</span>
+    <span><a href="mailto:parsasava@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/parsavafaeii">LinkedIn</a> · <a href="https://github.com/Parsavafaei26">GitHub</a></span>
+  </div>
+</footer>
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>

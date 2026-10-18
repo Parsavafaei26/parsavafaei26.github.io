@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>X-ray filter toolkit · Parsa Vafaei</title>
+<meta name="description" content="Sharpening a blurred foot X-ray with three classic filters, and comparing them with numbers as well as by eye.">
+<meta property="og:title" content="X-ray filter toolkit · Parsa Vafaei">
+<meta property="og:description" content="Sharpening a blurred foot X-ray with three classic filters, and comparing them with numbers as well as by eye.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://parsavafaei.com/projects/xray-filter-toolkit.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23161C2C'/%3E%3Ctext x='16' y='21' font-family='monospace' font-size='13' fill='%23F5F5F1' text-anchor='middle'%3EPV%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">PV</span>Parsa Vafaei</a>
+    <nav aria-label="Main"><ul class="nav"><li><a href="../projects.html" aria-current="page">Work</a></li><li><a href="../blog.html">Writing</a></li><li><a href="../about.html">About</a></li><li><a href="../index.html#contact">Contact</a></li></ul></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<div class="crumbs"><a href="../projects.html">Projects</a> / P-08</div>
+<header class="proj-head">
+  <div class="stack">
+    <span class="tag data">Data, code &amp; AI</span>
+    <h1>X-ray filter toolkit</h1>
+    <p class="lede">Sharpening a blurred foot X-ray with three classic filters, and comparing them with numbers as well as by eye.</p>
+  </div>
+  <div class="label">
+    <div class="label-top"><span><span class="dot" style="background:var(--data)"></span>P-08</span><span>2026</span></div>
+    <dl class="kv"><dt>Project</dt><dd>Sharpening a blurred X-ray, and measuring which method works</dd><dt>Context</dt><dd>Self-directed, built from MSc coursework</dd></dl>
+  </div>
+</header>
+<div class="metrics"><div class="metric"><b>48.8 dB</b><span>best PSNR, unsharp masking</span></div><div class="metric"><b>0.997</b><span>best SSIM</span></div><div class="metric"><b>3</b><span>filters compared</span></div><div class="metric"><b>9</b><span>unit tests</span></div></div>
+<div class="proj-body">
+  <div><section><h2>The question</h2><p class="prose">Which sharpening method best restores a blurred X-ray, and when does sharpening start to create misleading artefacts?</p></section><section><h2>What I did</h2><ul class="did"><li>Modelled blur as convolution with a Gaussian kernel, then sharpened with Laplacian filtering, unsharp masking and high-frequency emphasis.</li><li>Ran a controlled test: blurred a clean image by a known amount, sharpened it, and scored the result with PSNR and SSIM inside the anatomy only.</li><li>Scored the real blurred scan, which has no clean reference, on edge strength, background noise and clipped pixels.</li><li>Packaged the work as a reusable Python module with a scoring script, a figure script and unit tests.</li></ul></section><section><h2>What I found</h2><p class="prose">Unsharp masking gave the best restoration in every controlled test: at mild blur it lifted PSNR from 40.4 dB to 48.8 dB. High-frequency emphasis came second, and the Laplacian mostly added fine-scale noise. Pushing any method too hard creates halos and clipping, which matters because an artefact on a medical image can be read as a real feature.</p></section><section><h2>Figures</h2><div class="figs"><figure><div class="plate"><img src="../assets/img/projects/xray-methods-compared.png" alt="The scan as received and after each of the three sharpening methods, with a zoomed view of the mid-foot." loading="lazy"></div><figcaption>The blurred foot X-ray and the three sharpening methods, with a zoom on the mid-foot.</figcaption></figure><figure><div class="plate"><img src="../assets/img/projects/xray-controlled-test.png" alt="Chart of controlled test scores for the three sharpening methods." loading="lazy"></div><figcaption>Controlled test scores for each method.</figcaption></figure></div></section></div>
+  <aside class="aside">
+  <div><h3>Context</h3><p>Self-directed, built from MSc coursework</p></div>
+  <div><h3>When</h3><p>2026</p></div>
+  <div><h3>Role</h3><p>Individual</p></div>
+  <div><h3>Methods &amp; tools</h3><ul class="chips"><li>Python</li><li>NumPy</li><li>OpenCV</li><li>scikit-image</li><li>matplotlib</li><li>Unit testing</li></ul></div>
+  <div><h3>Links</h3><ul style="list-style:none;padding:0"><li><a href="https://github.com/Parsavafaei26/xray-filter-toolkit">Code and full write-up on GitHub ↗</a></li></ul></div>
+</aside>
+</div>
+<nav class="pager" aria-label="More projects"><a href="solidworks-device-design.html"><span>← Previous</span>Medical device design in SolidWorks</a><a class="next" href="catheter-adverse-events-ai.html"><span>Next →</span>AI analysis of catheter adverse event reports</a></nav>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Parsa Vafaei · London, UK</span>
+    <span><a href="mailto:parsasava@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/parsavafaeii">LinkedIn</a> · <a href="https://github.com/Parsavafaei26">GitHub</a></span>
+  </div>
+</footer>
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>
